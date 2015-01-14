@@ -1,6 +1,7 @@
 *.gem
 .bundle
-.idea/workspace.xm
+/.idea/
+.idea/workspace.xml
 Gemfile.lock
 pkg/*
 .ruby-version

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3a07f2-6359-453c-a6f6-3cf2a22df6b8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/simple-navigation-bootstrap/version.rb" afterPath="$PROJECT_DIR$/lib/simple-navigation-bootstrap/version.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="simple-navigation-bootstrap.iws" />
     <ignored path=".idea/workspace.xml" />
