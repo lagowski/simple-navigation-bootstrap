@@ -57,7 +57,7 @@ module SimpleNavigation
             item_options[:link][:class] << ''
             item_options[:link][:'data-toggle'] = ''
             item_options[:link][:'data-target'] = '#'
-            link << content_tag(:b, '', :class => 'caret')
+            link << content_tag(:span, '', :class => ['arrow'].flatten.compact.join(' '))
           end
           item.html_options = item_options
         end
