@@ -55,8 +55,9 @@ module SimpleNavigation
           item_options[:link][:class] = Array.new if item_options[:link][:class].nil?
           unless split
             item_options[:link][:class] << ''
-            item_options[:link][:'data-toggle'] = ''
+            item_options[:link][:'data-toggle'] = item_options.to_s
             item_options[:link][:'data-target'] = '#'
+            link << content_tag(:span, '', :class => ['selected'].flatten.compact.join(' '))
             link << content_tag(:span, '', :class => ['arrow'].flatten.compact.join(' '))
           end
           item.html_options = item_options
