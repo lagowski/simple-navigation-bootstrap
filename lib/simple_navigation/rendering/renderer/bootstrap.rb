@@ -18,9 +18,9 @@ module SimpleNavigation
               li_options[:id] = nil
               li_content = tag_for(item)
             end
-            item.sub_navigation.dom_class = [item.sub_navigation.dom_class, 'dropdown-menu', split ? 'pull-right' : nil].flatten.compact.join(' ')
+            item.sub_navigation.dom_class = [item.sub_navigation.dom_class].flatten.compact.join(' ')
             li_content << render_sub_navigation_for(item)
-            li_options[:class] = [li_options[:class], 'dropdown', split ? 'dropdown-split-right' : nil].flatten.compact.join(' ')
+            li_options[:class] = [li_options[:class]].flatten.compact.join(' ')
           end
           list << content_tag(:li, li_content, li_options)
         end.join
@@ -47,14 +47,15 @@ module SimpleNavigation
         url = item.url
         link = Array.new
         link << content_tag(:i, '', :class => [icon].flatten.compact.join(' ')) unless icon.nil?
-        link << name
+        link << content_tag(:span, name, :class => ['title'].flatten.compact.join(' '))
+
         if include_sub_navigation?(item)
           item_options = item.html_options
           item_options[:link] = Hash.new if item_options[:link].nil?
           item_options[:link][:class] = Array.new if item_options[:link][:class].nil?
           unless split
-            item_options[:link][:class] << 'dropdown-toggle'
-            item_options[:link][:'data-toggle'] = 'dropdown'
+            item_options[:link][:class] << ''
+            item_options[:link][:'data-toggle'] = ''
             item_options[:link][:'data-target'] = '#'
             link << content_tag(:b, '', :class => 'caret')
           end
